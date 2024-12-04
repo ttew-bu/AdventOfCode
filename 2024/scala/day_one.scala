@@ -1,4 +1,4 @@
-class SolutionDay01:
+class SolutionDay01{
     def inputToPairs(path : String) : List[Array[String]]  = {
             var fileContentGenerator = scala.io.Source.fromFile(path).getLines
             var fileContentPairs = 
@@ -42,3 +42,4 @@ class SolutionDay01:
             val solutionVal = processPairs(pairs)
             println(solutionVal)
         }
+    }
