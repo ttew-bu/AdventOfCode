@@ -37,7 +37,7 @@ def checkLogicFailures(fullSequence : Array[String], ruleMap : MapView[String,Ar
 
 }
 
-def getSolution(path : String) : Int = {
+def getSolution() : Int = {
 
     sequenceStrings.map(sequence => checkLogicFailures(sequence.split(","), ruleMap)).sum
 
@@ -66,7 +66,7 @@ class Part02 extends SolutionDay05{
             }
 
             else{
-                print(sliceFailures.toList)
+
                 //Remove all failures, move them to the front
                 fullSequenceCopy = fullSequenceCopy.filter(!sliceFailures.contains(_))
                 fullSequenceCopy = sliceFailures ++ fullSequenceCopy
@@ -80,7 +80,7 @@ class Part02 extends SolutionDay05{
         if ( fixesApplied >0 ){
         
             var middleIndex = (seqLength - 1)/2
-            print(fullSequenceCopy.toList)
+
             fullSequenceCopy(middleIndex).toInt
             
         }
@@ -89,8 +89,14 @@ class Part02 extends SolutionDay05{
             0
         }
     }
+    
+    def getSolution() : Int = {
+
+    sequenceStrings.map(sequence => correctLogicFailures(sequence.split(","), ruleMap)).sum
+
+}
 }
 
     
     
-    sequenceStrings.map(sequence => Part02().correctLogicFailures(sequence.split(","), ruleMap)).sum
+    
